@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>form PHP</title>
+</head>
+<body>
+<h1>Bienvenido</h1>
+
+<?php 
+//SERVER
+$Nombre= "";
+$edad= "";
+$edad= intval($edad);
+	if($_SERVER["REQUEST_METHOD"] == "GET") {
+	
+		$edad= $_GET["edad"];
+	}
+	else{
+
+		$edad= $_POST["edad"];
+	}
+
+	
+
+
+	if((empty($edad)) or (!is_numeric($edad)))
+	{
+		echo "error";
+	}
+	else{
+
+	if($edad<18){
+		echo "sos una criatura";
+	}
+
+	if(($edad <=65) and ($edad >= 18 ))
+	{
+		echo "sos joven";
+	}
+	if($edad>65){
+		echo "Viejo jubilado";
+	}
+	}
+	
+	
+ ?>
+
+
+
+
+</form>
+</body>
+</html>
